@@ -1,0 +1,7 @@
+**/.settings/org.eclipse.*
+**/.project
+**/.classpath
+**/.factorypath
+*.code-workspace
+**/*.log
+java/console/config.properties

@@ -1,10 +1,14 @@
 package com.betfair.esa.client.cache.util;
 
+import com.fasterxml.jackson.annotation.JsonCreator; 
+import com.fasterxml.jackson.annotation.JsonProperty; 
+
 public class RunnerId {
     private final long selectionId;
     private final Double handicap;
 
-    public RunnerId(long selectionId, Double handicap) {
+    @JsonCreator
+    public RunnerId(@JsonProperty("selectionId") long selectionId, @JsonProperty("handicap") Double handicap) {
         this.selectionId = selectionId;
         this.handicap = handicap;
     }

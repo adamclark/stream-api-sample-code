@@ -2,6 +2,8 @@ package com.betfair.esa.client.cache.market;
 
 import com.betfair.esa.client.cache.util.RunnerId;
 import com.betfair.esa.swagger.model.RunnerDefinition;
+import com.fasterxml.jackson.annotation.JsonCreator; 
+import com.fasterxml.jackson.annotation.JsonProperty; 
 
 /**
  * Thread safe atomic snapshot of a market runner.
@@ -12,7 +14,8 @@ public class MarketRunnerSnap {
     private RunnerDefinition definition;
     private MarketRunnerPrices prices;
 
-    public MarketRunnerSnap(RunnerId runnerId, RunnerDefinition definition, MarketRunnerPrices prices) {
+    @JsonCreator
+    public MarketRunnerSnap(@JsonProperty("runnerId") RunnerId runnerId, @JsonProperty("definition") RunnerDefinition definition, @JsonProperty("prices") MarketRunnerPrices prices) {
         this.runnerId = runnerId;
         this.definition = definition;
         this.prices = prices;
